@@ -18,7 +18,17 @@ jobs:
     - name: Setup Swift
       uses: swift-actions/setup-swift@v1
       with:
-        swift-version: "5.10"
+        swift-version: "5.9.2"
+
+    - name: Cache Swift PM
+      uses: actions/cache@v3
+      with:
+        path: |
+          ~/.swiftpm
+          .build
+        key: ${{ runner.os }}-swiftpm-${{ hashFiles('**/Package.resolved') }}
+        restore-keys: |
+          ${{ runner.os }}-swiftpm-
 
     - name: Test Core Package
       run: |
@@ -41,7 +51,17 @@ jobs:
     - name: Setup Swift
       uses: swift-actions/setup-swift@v1
       with:
-        swift-version: "5.10"
+        swift-version: "5.9.2"
+
+    - name: Cache Swift PM
+      uses: actions/cache@v3
+      with:
+        path: |
+          ~/.swiftpm
+          .build
+        key: ${{ runner.os }}-swiftpm-${{ hashFiles('**/Package.resolved') }}
+        restore-keys: |
+          ${{ runner.os }}-swiftpm-
 
     - name: Test Profile Package
       run: |
