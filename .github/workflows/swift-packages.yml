@@ -1,0 +1,54 @@
+name: Swift Packages CI
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  test-core-package:
+    name: Test Core Package (Windows)
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Swift
+      uses: swift-actions/setup-swift@v1
+      with:
+        swift-version: "5.10"
+
+    - name: Test Core Package
+      run: |
+        cd Modules/Core
+        swift test --verbose
+
+    - name: Build Core Package
+      run: |
+        cd Modules/Core
+        swift build
+
+  test-profile-package:
+    name: Test Profile Package (macOS)
+    runs-on: macos-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Swift
+      uses: swift-actions/setup-swift@v1
+      with:
+        swift-version: "5.10"
+
+    - name: Test Profile Package
+      run: |
+        cd Modules/Profile
+        swift test --verbose
+
+    - name: Build Profile Package
+      run: |
+        cd Modules/Profile
+        swift build
