@@ -2,6 +2,10 @@
 #
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
 
+# Build products
+build/
+DerivedData/
+
 ## User settings
 xcuserdata/
 
@@ -60,3 +64,7 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
+
+# macOS system file used by Finder to store folder view options, icon positions, and display settings.
+# Not needed in version control and can cause unnecessary diffs across machines.
+.DS_Store
