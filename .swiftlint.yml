@@ -1,0 +1,24 @@
+disabled_rules: # rules to disable
+  - trailing_whitespace
+  - line_length
+
+opt_in_rules: # rules to enable explicitly
+  - empty_count
+  - explicit_init
+
+included:
+  - Bello
+  - Modules
+
+excluded:
+  - Modules/*/.build
+  - DerivedData
+
+type_name:
+  min_length: 3
+  max_length: 40
+  excluded:
+    - ID
+    - URL
+
+reporter: xcode

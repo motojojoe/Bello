@@ -28,14 +28,14 @@ repos:
     hooks:
     -   id: swiftformat
         name: SwiftFormat
-        entry: bash -c 'if command -v swiftformat >/dev/null 2>&1; then swiftformat .; else echo "SwiftFormat not found, skipping..."; fi'
+        entry: bash -c 'if command -v swiftformat >/dev/null 2>&1; then swiftformat . --config .swiftformat; else echo "❌ SwiftFormat not found, please install it (e.g. brew install swiftformat)" >&2; exit 1; fi'
         language: system
         files: \.swift$
         pass_filenames: false
         require_serial: true
     -   id: swiftlint
         name: SwiftLint
-        entry: bash -c 'if command -v swiftlint >/dev/null 2>&1; then swiftlint --fix; else echo "SwiftLint not found, skipping..."; fi'
+        entry: bash -c 'if command -v swiftlint >/dev/null 2>&1; then swiftlint --fix --config .swiftlint.yml; else echo "❌ SwiftLint not found, please install it (e.g. brew install swiftlint)" >&2; exit 1; fi'
         language: system
         files: \.swift$
         pass_filenames: false

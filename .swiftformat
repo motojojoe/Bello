@@ -1,0 +1,10 @@
+--swiftversion 5.9
+--header strip
+--importgrouping testable-top
+--indent 2
+--maxwidth 120
+--wraparguments beforefirst
+--wrapelements beforefirst
+--commas inline
+--self remove
+--stripunusedargs always
