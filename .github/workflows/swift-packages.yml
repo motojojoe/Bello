@@ -40,6 +40,39 @@ jobs:
         cd Modules/Core
         swift build
 
+  test-core-package-linux:
+    name: Test Core Package (Linux)
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Swift
+      uses: SwiftyLab/setup-swift@latest
+      with:
+        swift-version: "6.1.0"
+
+    - name: Cache Swift PM
+      uses: actions/cache@v3
+      with:
+        path: |
+          ~/.swiftpm
+          .build
+        key: ${{ runner.os }}-swiftpm-${{ hashFiles('**/Package.resolved') }}
+        restore-keys: |
+          ${{ runner.os }}-swiftpm-
+
+    - name: Test Core Package
+      run: |
+        cd Modules/Core
+        swift test --verbose
+
+    - name: Build Core Package
+      run: |
+        cd Modules/Core
+        swift build
+
   test-profile-package:
     name: Test Profile Package (macOS)
     runs-on: macos-latest
