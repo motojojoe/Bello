@@ -6,6 +6,25 @@ public struct User {
   public let email: String
   public let telephone: String
   public let avatarURL: String
+
+  /// Public memberwise initializer so other modules can instantiate `User`.
+  public init(
+    firstName: String,
+    lastName: String,
+    companyName: String,
+    position: String,
+    email: String,
+    telephone: String,
+    avatarURL: String
+  ) {
+    self.firstName = firstName
+    self.lastName = lastName
+    self.companyName = companyName
+    self.position = position
+    self.email = email
+    self.telephone = telephone
+    self.avatarURL = avatarURL
+  }
 }
 
 public struct GetProfileUseCase {
