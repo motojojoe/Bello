@@ -1,4 +1,5 @@
 import Profile
+import Home
 import SwiftUI
 
 @main
@@ -14,7 +15,7 @@ struct BelloApp: App {
         }
 
         NavigationStack {
-          Text("Home")
+          HomeView()
         }
         .tabItem {
           Label("Home", systemImage: "house")
