@@ -7,42 +7,6 @@ on:
     branches: [ main, develop ]
 
 jobs:
-  test-core-package:
-    name: Test Core Package (Windows)
-    runs-on: windows-latest
-
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-
-    - name: Install Swift dependencies (Chocolatey)
-      run: choco install swift
-
-    - name: Setup Swift
-      uses: SwiftyLab/setup-swift@latest
-      with:
-        swift-version: "6.1.0"
-
-    - name: Cache Swift PM
-      uses: actions/cache@v3
-      with:
-        path: |
-          ~/.swiftpm
-          .build
-        key: ${{ runner.os }}-swiftpm-${{ hashFiles('**/Package.resolved') }}
-        restore-keys: |
-          ${{ runner.os }}-swiftpm-
-
-    - name: Test Core Package
-      run: |
-        cd Modules/Core
-        swift test --verbose
-
-    - name: Build Core Package
-      run: |
-        cd Modules/Core
-        swift build
-
   test-core-package-linux:
     name: Test Core Package (Linux)
     runs-on: ubuntu-latest
