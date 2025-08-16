@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B32F92C02E5094D50089FACE /* Home in Frameworks */ = {isa = PBXBuildFile; productRef = B32F92BF2E5094D50089FACE /* Home */; };
 		B38DA2B82DF2FDBE00106705 /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = B38DA2B72DF2FDBE00106705 /* Core */; };
 		B38DA2BB2DF2FFF300106705 /* Profile in Frameworks */ = {isa = PBXBuildFile; productRef = B38DA2BA2DF2FFF300106705 /* Profile */; };
 		B38DA2C42DF3055E00106705 /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = B38DA2C32DF3055E00106705 /* Core */; };
@@ -33,6 +34,7 @@
 				B38DA2C72DF305BD00106705 /* Profile in Frameworks */,
 				B38DA2BB2DF2FFF300106705 /* Profile in Frameworks */,
 				B38DA2B82DF2FDBE00106705 /* Core in Frameworks */,
+				B32F92C02E5094D50089FACE /* Home in Frameworks */,
 				B38DA2C42DF3055E00106705 /* Core in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -80,6 +82,7 @@
 				B38DA2BA2DF2FFF300106705 /* Profile */,
 				B38DA2C32DF3055E00106705 /* Core */,
 				B38DA2C62DF305BD00106705 /* Profile */,
+				B32F92BF2E5094D50089FACE /* Home */,
 			);
 			productName = Bello;
 			productReference = B38DA2A82DF2F69400106705 /* Bello.app */;
@@ -112,6 +115,7 @@
 			packageReferences = (
 				B38DA2C22DF3055E00106705 /* XCLocalSwiftPackageReference "Modules/Core" */,
 				B38DA2C52DF305BD00106705 /* XCLocalSwiftPackageReference "Modules/Profile" */,
+				B32F92BE2E5094D50089FACE /* XCLocalSwiftPackageReference "Modules/Home" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = B38DA2A92DF2F69400106705 /* Products */;
@@ -341,6 +345,10 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
+		B32F92BE2E5094D50089FACE /* XCLocalSwiftPackageReference "Modules/Home" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Modules/Home;
+		};
 		B38DA2C22DF3055E00106705 /* XCLocalSwiftPackageReference "Modules/Core" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Modules/Core;
@@ -352,6 +360,10 @@
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		B32F92BF2E5094D50089FACE /* Home */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Home;
+		};
 		B38DA2B72DF2FDBE00106705 /* Core */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Core;
