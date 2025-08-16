@@ -15,6 +15,10 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
+    - name: Install Windows SDK 10.0.20348.0
+      run: choco install windows-sdk-10-version-20348.0 --force
+      shell: powershell
+
     - name: Setup Swift
       uses: SwiftyLab/setup-swift@latest
       with:
