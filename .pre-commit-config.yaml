@@ -21,7 +21,6 @@ repos:
     hooks:
     -   id: conventional-pre-commit
         stages: [commit-msg]
-        args: [--optional-scope]
 
 # Swift formatting and linting (if tools are available)
 -   repo: local
